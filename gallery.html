@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+<!--    WEB FONTS 선언-->
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link href="https://font.elice.io/css?family=Elice+DX+Neolli" rel="stylesheet">
+<!--    CSS선언-->
+<!--    <link rel="stylesheet" href="./style.css">-->
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'SUIT', sans-serif;
+        background: #fffdf6;
+    }
+
+    nav {
+        z-index: 1;
+        margin-top: 25px;
+        border-radius: 50px;
+
+        text-align: center;
+        background: rgb(255, 255, 255, 0.8);
+        border: solid .5px rgb(0, 0, 0, 0.2);
+        width: 800px;
+        height: 60px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); /*Safari 전용 blur*/
+
+        box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+
+        position: fixed;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .nav_menu {
+        list-style-type: none;
+        font-weight: 300;
+        font-size: 18px;
+        height: 42px;
+        padding-top: 2px;
+    }
+    .nav_menu li {
+        display: inline;
+        padding: 0 30px 0 30px;
+        margin-right: .75rem;
+    }
+
+    .nav_menu li a {
+        text-decoration: none;
+        color: rgb(0, 0, 0, .8);
+    }
+    .nav_menu li a span {
+        color: coral;
+        font-weight: 800;
+    }
+    .nav_menu img {
+        vertical-align: middle;
+    }
+
+    .nav_menu li a:hover {
+        font-weight: 700;
+        opacity: .8;
+    }
+    .nav_menu li a:active {
+        opacity: .5;
+    }
+    .noti h2 {
+        color: rgb(255, 255, 255, .9);
+        padding-top: 2.25rem;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+    }
+    .noti p {
+        color: rgb(255, 255, 255, .9);
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+        line-height: 1.5rem;
+    }
+    footer {
+        position: absolute;
+        bottom: -1850px;
+        width: 100%;
+        height: 150px;
+        transform: translateY(0%);
+
+        background: black;
+        color: white;
+        font-family: "Elice DX Neolli", sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .leftside {
+        display: inline-block;
+        width: 500px;
+        padding: 20px 0 0 10px;
+        line-height: 2rem;
+        opacity: .8;
+    }
+    .rightside {
+        text-align: right;
+        display: inline-block;
+        float: right;
+        padding: 20px 10px 0 0;
+        line-height: 2rem;
+        opacity: .8;
+    }
+    /*구분선*/
+
+    .frame {
+        float: left;
+        width: calc(100% - 80px);
+        height: 100%;
+        margin: 70px 40px 100px 40px;
+    }
+
+    .timeline {
+        font-weight: 800;
+        font-size: 40px;
+        margin-top: 50px;
+        border-bottom: solid 0.5px gray;
+    }
+    .gallery {
+        float: left;
+        max-width: 5000px;
+        height: 350px;
+        margin: 20px;
+        text-align: center;
+    }
+    .gallery img {
+        margin: 0 auto;
+        margin-bottom: 5px;
+        display: flex;
+        border-radius: 20px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .clear {
+        clear: both;
+    }
+
+    .title {
+        font-size: 45px;
+        font-weight: 800;
+        margin-top: 110px;
+        width: 100%;
+
+        text-align: center;
+    }
+</style>
+<body>
+
+<nav>
+    <ul class="nav_menu">
+        <li><a href="./index.html"><img src="./sources/logo.png" alt="logo" width="59"></a></li>
+        <li class="now"><a href="./overall.html">전체 뷰</a></li>
+        <li><a href="./travel.html">여행지</a></li>
+        <li><a href="./gallery.html"><span>갤러리</span></a></li>
+        <li><a href="./airlines.html">항공사</a></li>
+        <li><a href="./tips.html">팁스</a></li>
+    </ul>
+</nav>
+
+<p class="title">최고의 한 점</p>
+
+
+<div class="frame">
+
+    <div class="timeline">
+        <p>대한민국</p>
+    </div>
+    <div class="gallery">
+        <img src="./sources/kor1_1.JPG" height="300">
+        <p>경상북도</p>
+        <p class="subtitle">2023.08</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/kor2_1.JPG" height="300">
+        <p>제주도</p>
+        <p class="subtitle">2024.01</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/kor1_2.jpg" height="300">
+        <p>경상북도</p>
+        <p class="subtitle">2024.08</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/kor2_2.JPG" height="300">
+        <p>제주도</p>
+        <p class="subtitle">2024.01</p>
+    </div>
+
+    <div class="clear"></div>
+
+
+
+    <div class="timeline">
+        <p>일본</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/jpn1_1.jpg" height="300">
+        <p>도쿄역</p>
+        <p class="subtitle">2024.01</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/jpn1_2.jpg" height="300">
+        <p>도쿄 | 아키하바라</p>
+        <p class="subtitle">2024.01</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/jpn1_3.jpg" height="300">
+        <p>도쿄 | 아키하바라 | 요도바시 카메라</p>
+        <p class="subtitle">2024.01</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/jpn2_4.HEIC" height="300">
+        <p>오사카 | 유니버셜 스튜디오</p>
+        <p class="subtitle">2019.11</p>
+    </div>
+
+    <div class="clear"></div>
+
+
+
+
+    <div class="timeline">
+        <p>홍콩</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/hkg1_1.JPG" height="300">
+        <p>홍콩</p>
+        <p class="subtitle">2018.11</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/hkg1_2JPG.JPG" height="300">
+        <p>홍콩</p>
+        <p class="subtitle">2018.11</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/hkg1_3.JPG" height="300">
+        <p>홍콩 | 애플스토어</p>
+        <p class="subtitle">2018.11</p>
+    </div>
+
+    <div class="gallery">
+        <img src="./sources/hkg1_4.JPG" height="300">
+        <p>홍콩</p>
+        <p class="subtitle">2018.11</p>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+
+
+
+<footer>
+    <p class="leftside">
+        KAYWON UNIVERSITY OF ART & DESIGN | DIGITAL MEDIA DESIGN <br>
+        PROGRAMMING PART | ADVANCED WEB PUBLISHING | FIRST PROJECT <br>
+        FONT-FAMILY | SUIT, ELICE DX NEOLLI
+    </p>
+    <p class="rightside">
+        계원예술대학교 | 디지털미디어디자인 <br>
+        프로그래밍 파트 | 고급웹퍼블리싱 | 첫 번째 프로젝트 <br>
+        서체 | 수트, 엘리스 DX널리체
+    </p>
+</footer>
+
+</body>
+</html>

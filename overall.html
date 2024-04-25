@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전체 뷰</title>
+<!--    WEB FONTS 선언-->
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link href="https://font.elice.io/css?family=Elice+DX+Neolli" rel="stylesheet">
+<!--    CSS선언-->
+<!--    <link rel="stylesheet" href="./style.css">-->
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'SUIT', sans-serif;
+        background: #fffdf6;
+    }
+
+    nav {
+        z-index: 1;
+        margin-top: 25px;
+        border-radius: 50px;
+
+        text-align: center;
+        background: rgb(255, 255, 255, 0.8);
+        border: solid .5px rgb(0, 0, 0, 0.2);
+        width: 800px;
+        height: 60px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); /*Safari 전용 blur*/
+
+        box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+
+
+        position: fixed;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .nav_menu {
+        list-style-type: none;
+        font-weight: 300;
+        font-size: 18px;
+        height: 42px;
+        padding-top: 2px;
+    }
+    .nav_menu li {
+        display: inline;
+        padding: 0 30px 0 30px;
+        margin-right: .75rem;
+    }
+
+    .nav_menu li a {
+        text-decoration: none;
+        color: rgb(0, 0, 0, .8);
+    }
+    .nav_menu li a span {
+        color: coral;
+        font-weight: 800;
+    }
+    .nav_menu img {
+        vertical-align: middle;
+    }
+
+    .nav_menu li a:hover {
+        font-weight: 700;
+        opacity: .8;
+    }
+    .nav_menu li a:active {
+        opacity: .5;
+    }
+    .noti {
+        text-align: center;
+        border: solid .5px rgb(255, 255, 255, .25);
+        border-radius: 1.25rem;
+        width: 600px;
+        height: 200px;
+        background: rgb(255, 255, 255, .15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); /*Safari 전용 blur*/
+        box-shadow: 0 0 35px rgba(0, 0, 0, .25);
+
+        position: relative;
+        vertical-align: middle;
+
+
+    }
+    .noti h2 {
+        color: rgb(255, 255, 255, .9);
+        padding-top: 2.25rem;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+    }
+    .noti p {
+        color: rgb(255, 255, 255, .9);
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+        line-height: 1.5rem;
+    }
+    footer {
+        position: absolute;
+        bottom: -350px;
+        width: 100%;
+        height: 150px;
+        transform: translateY(0%);
+
+        background: black;
+        color: white;
+        font-family: "Elice DX Neolli", sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .leftside {
+        display: inline-block;
+        width: 500px;
+        padding: 20px 0 0 10px;
+        line-height: 2rem;
+        opacity: .8;
+    }
+    .rightside {
+        text-align: right;
+        display: inline-block;
+        float: right;
+        padding: 20px 10px 0 0;
+        line-height: 2rem;
+        opacity: .8;
+    }
+
+
+    .wrap {
+        width: 97%;
+        height: 100%;
+        border: solid .5px rgb(0, 0, 0, .4);
+        border-radius: 1.5rem;
+        box-shadow: 0 0 25px rgb(0, 0, 0, .3);
+
+        background-image: url("./sources/overall_bg.png");
+        background-size: cover;
+        background-position-x: 50%;
+        background-position-y: 80%;
+        background-repeat: no-repeat;
+
+        position: absolute;
+        margin-top: 150px;;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .wrap img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        object-fit: cover;
+        opacity: .8;
+        border-radius: 2rem;
+        border: solid .1px rgb(255, 255, 255, .8);
+    }
+    .wrap span {
+        color: rgb(255, 255, 255, .7);
+        font-size: 14px;
+        position: absolute;
+        bottom: 0;
+        width: 170px;
+        left: 80%;
+        top: 97%;
+
+        float: right;
+    }
+
+    .point1 {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+
+        position: absolute;
+        top: 30%;
+        left: 55%;
+
+        transition: .5s all;
+    }
+    .point1_contents {
+        display: none;
+        position: absolute;
+        width: 400%;
+        top: -150%;
+        left: -200%;
+        padding: 10px 30px 10px 30px;
+        border-radius: .75rem;
+        text-align: center;
+
+        background: rgb(0, 0, 0, .7);
+        color: white;
+    }
+    .point1:hover .point1_contents {
+        display: block;
+    }
+
+
+    .point2 {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+
+        position: absolute;
+        top: 43%;
+        left: 50%;
+
+        transition: .5s all;
+    }
+    .point2_contents {
+        display: none;
+        position: absolute;
+        width: 400%;
+        top: -150%;
+        left: -200%;
+        padding: 10px 30px 10px 30px;
+        border-radius: .75rem;
+        text-align: center;
+
+        background: rgb(0, 0, 0, .7);
+        color: white;
+    }
+    .point2:hover .point2_contents {
+        display: block;
+    }
+
+
+    .point3 {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+
+        position: absolute;
+        top: 32%;
+        left: 72%;
+
+        transition: .5s all;
+    }
+    .point3_contents {
+        display: none;
+        position: absolute;
+        width: 400%;
+        top: -150%;
+        left: -200%;
+        padding: 10px 30px 10px 30px;
+        border-radius: .75rem;
+        text-align: center;
+
+        background: rgb(0, 0, 0, .7);
+        color: white;
+    }
+    .point3:hover .point3_contents {
+        display: block;
+    }
+
+
+    .point4 {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+
+        position: absolute;
+        top: 38%;
+        left: 64.5%;
+
+        transition: .5s all;
+    }
+    .point4_contents {
+        display: none;
+        position: absolute;
+        width: 400%;
+        top: -150%;
+        left: -200%;
+        padding: 10px 30px 10px 30px;
+        border-radius: .75rem;
+        text-align: center;
+
+        background: rgb(0, 0, 0, .7);
+        color: white;
+    }
+    .point4:hover .point4_contents {
+        display: block;
+    }
+
+
+    .point5 {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+
+        position: absolute;
+        top: 78%;
+        left: 26%;
+
+        transition: .5s all;
+    }
+    .point5_contents {
+        display: none;
+        position: absolute;
+        width: 400%;
+        top: -150%;
+        left: -200%;
+        padding: 10px 30px 10px 30px;
+        border-radius: .75rem;
+        text-align: center;
+
+        background: rgb(0, 0, 0, .7);
+        color: white;
+    }
+    .point5:hover .point5_contents {
+        display: block;
+    }
+
+
+
+    @media screen and (max-width: 1300px) {
+        .point1 {
+            width: 35px;
+            height: 35px;
+            top: 43%;
+            left: 54%;
+        }
+        .container1 {
+            width: 35%;
+            height: 60%;
+        }
+        .point2 {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+
+            position: absolute;
+            top: 52%;
+            left: 50%;
+
+            transition: .5s all;
+        }
+        .point3 {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+
+            position: absolute;
+            top: 45%;
+            left: 74%;
+
+            transition: .5s all;
+        }
+        .point4 {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+
+            position: absolute;
+            top: 48%;
+            left: 66%;
+
+            transition: .5s all;
+        }
+        .point5 {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+
+            position: absolute;
+            top: 78%;
+            left: 23%;
+
+            transition: .5s all;
+        }
+    }
+</style>
+<body>
+
+<nav>
+    <ul class="nav_menu">
+        <li><a href="./index.html"><img src="./sources/logo.png" alt="logo" width="59"></a></li>
+        <li class="now"><a href="./overall.html"><span>전체 뷰</span></a></li>
+        <li><a href="./travel.html">여행지</a></li>
+        <li><a href="./gallery.html">갤러리</a></li>
+        <li><a href="./airlines.html">항공사</a></li>
+        <li><a href="./tips.html">팁스</a></li>
+    </ul>
+</nav>
+
+<div class="wrap">
+    <span>Powered by Google Earth</span>
+
+
+    <div class="point1">
+        <img src="./sources/pin.png" alt="핀">
+        <div class="point1_contents">
+            대한민국 | 경상북도
+        </div>
+    </div>
+
+    <div class="point2">
+        <img src="./sources/pin.png" alt="핀">
+        <div class="point2_contents">
+            대한민국 | 제주도
+        </div>
+    </div>
+
+    <div class="point3">
+        <img src="./sources/pin.png" alt="핀">
+        <div class="point3_contents">
+            일본 | 도쿄
+        </div>
+    </div>
+
+    <div class="point4">
+        <img src="./sources/pin.png" alt="핀">
+        <div class="point4_contents">
+            일본 | 오사카
+        </div>
+    </div>
+
+
+    <div class="point5">
+        <img src="./sources/pin.png" alt="핀">
+        <div class="point5_contents">
+            홍콩 | 홍콩
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p class="leftside">
+        KAYWON UNIVERSITY OF ART & DESIGN | DIGITAL MEDIA DESIGN <br>
+        PROGRAMMING PART | ADVANCED WEB PUBLISHING | FIRST PROJECT <br>
+        FONT-FAMILY | SUIT, ELICE DX NEOLLI
+    </p>
+    <p class="rightside">
+        계원예술대학교 | 디지털미디어디자인 <br>
+        프로그래밍 파트 | 고급웹퍼블리싱 | 첫 번째 프로젝트 <br>
+        서체 | 수트, 엘리스 DX널리체
+    </p>
+</footer>
+
+
+</body>
+</html>

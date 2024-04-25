@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>항공사</title>
+<!--    WEB FONTS 선언-->
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link href="https://font.elice.io/css?family=Elice+DX+Neolli" rel="stylesheet">
+<!--    CSS선언-->
+<!--    <link rel="stylesheet" href="./style.css">-->
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'SUIT', sans-serif;
+        background: #fffdf6;
+    }
+
+    nav {
+        z-index: 1;
+        margin-top: 25px;
+        border-radius: 50px;
+
+        text-align: center;
+        background: rgb(255, 255, 255, 0.8);
+        border: solid .5px rgb(0, 0, 0, 0.2);
+        width: 800px;
+        height: 60px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); /*Safari 전용 blur*/
+
+        box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+
+
+        position: fixed;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .nav_menu {
+        list-style-type: none;
+        font-weight: 300;
+        font-size: 18px;
+        height: 42px;
+        padding-top: 2px;
+    }
+    .nav_menu li {
+        display: inline;
+        padding: 0 30px 0 30px;
+        margin-right: .75rem;
+    }
+
+    .nav_menu li a {
+        text-decoration: none;
+        color: rgb(0, 0, 0, .8);
+    }
+    .nav_menu li a span {
+        color: coral;
+        font-weight: 800;
+    }
+    .nav_menu img {
+        vertical-align: middle;
+    }
+
+    .nav_menu li a:hover {
+        font-weight: 700;
+        opacity: .8;
+    }
+    .nav_menu li a:active {
+        opacity: .5;
+    }
+    .noti h2 {
+        color: rgb(255, 255, 255, .9);
+        padding-top: 2.25rem;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+    }
+    .noti p {
+        color: rgb(255, 255, 255, .9);
+        text-shadow: 0 0 10px rgba(0, 0, 0, .35);
+        line-height: 1.5rem;
+    }
+    footer {
+        position: absolute;
+        bottom: -1300px;
+        width: 100%;
+        height: 150px;
+        transform: translateY(0%);
+
+        background: black;
+        color: white;
+        font-family: "Elice DX Neolli", sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .leftside {
+        display: inline-block;
+        width: 500px;
+        padding: 20px 0 0 10px;
+        line-height: 2rem;
+        opacity: .8;
+    }
+    .rightside {
+        text-align: right;
+        display: inline-block;
+        float: right;
+        padding: 20px 10px 0 0;
+        line-height: 2rem;
+        opacity: .8;
+    }
+    /*구분선*/
+
+    .container {
+        background: white;
+        display: block;
+        /*border: solid 1px red;*/
+        width: 85%;
+        padding: 40px;
+        box-shadow: 0 0 15px rgb(0, 0, 0, .1);
+
+        border: solid .25px rgb(0, 0, 0, 0.2);
+        border-radius: 2rem;
+        position: relative;
+        margin-top: 150px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .container p {
+        float: right;
+        display: block;
+        font-size: 40px;
+        font-weight: 800;
+        margin: 0 0 190px 0;
+    }
+    .container span {
+        display: block;
+        font-size: 20px;
+        word-break: keep-all;
+        margin-bottom: 40px;
+    }
+    .img {
+        border-radius: 2rem;
+    }
+
+
+
+
+</style>
+<body>
+
+<nav>
+    <ul class="nav_menu">
+        <li><a href="./index.html"><img src="./sources/logo.png" alt="logo" width="59"></a></li>
+        <li class="now"><a href="./overall.html">전체 뷰</a></li>
+        <li><a href="./travel.html">여행지</a></li>
+        <li><a href="./gallery.html">갤러리</a></li>
+        <li><a href="./airlines.html"><span>항공사</span></a></li>
+        <li><a href="./tips.html">팁스</a></li>
+    </ul>
+</nav>
+
+
+
+
+<div class="container">
+    <img class="logo" src="./sources/airpremia_logo.png" height="50">
+    <p>에어프레미아</p>
+    <br><br>
+    <span>
+        대한민국의 저비용항공사(Low-cost Carrier, LCC) 중 하나로 저비용항공사인 것을 감안했을 때 신형 항공기, 넓은 이코노미 좌석, 양질의 서비스 등의 차별성을 가진 항공사다.
+        <br><br>
+        특히 일반 이코노미의 좌석이 다른 항공사와 비교했을 때 상당히 넓은 편으로 일본운항시에도 간단한 간식거리가 제공된다.
+        <br><br>
+        에어프레미아에는 프리미엄 이코노미(Premia 42) 클래스 좌석이 존재하는데 일반 항공사 이코노미와 비즈니스 좌석의 사이 정도 포지션이라 생각하면 편하다.
+    </span>
+    <img class="img" src="./sources/airpremia_1.JPG"height=400">
+    <img src="./sources/airpremia_2.png" height="400" class="img">
+</div>
+
+
+
+<div class="container">
+    <img class="logo" src="./sources/ethiopian_logo.svg" height="120">
+    <p>에티오피아항공</p>
+    <br><br>
+    <span>
+        24년 1월, 일본여행 계획 중 우연히 알게되어 이용한 항공사.
+        <br> 믿음이 가지 않을 수 있지만 성수기 시즌에도 매우 저렴한 가격, 그럼에도 기내식을 제공하고 연착은 경험상 복귀 비행기 1시간이 전부였다.
+        <br><br>
+        가격대비 매우 만족스러운 경험이었으며 좌석크기 또한 준수한 수준이다.
+        <br>기내식을 제공하는 것이 큰 매리트로 작용할 것 같다.
+    </span>
+    <img class="img" src="./sources/ethiopian_1.JPG"height=345">
+    <img src="./sources/ethiopian_2.JPG" height="345" class="img">
+</div>
+
+
+
+
+<footer>
+    <p class="leftside">
+        KAYWON UNIVERSITY OF ART & DESIGN | DIGITAL MEDIA DESIGN <br>
+        PROGRAMMING PART | ADVANCED WEB PUBLISHING | FIRST PROJECT <br>
+        FONT-FAMILY | SUIT, ELICE DX NEOLLI
+    </p>
+    <p class="rightside">
+        계원예술대학교 | 디지털미디어디자인 <br>
+        프로그래밍 파트 | 고급웹퍼블리싱 | 첫 번째 프로젝트 <br>
+        서체 | 수트, 엘리스 DX널리체
+    </p>
+</footer>
+
+</body>
+</html>
